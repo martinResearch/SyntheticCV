@@ -94,6 +94,13 @@ if you get the error  undefined reference to "png_write_finish_row' when compili
 	make
 	make install 
 
+if that still does not work you may try to patch povray 
+	
+	patch -p0 < ../vlpovutils/povray/povray-3.6.1-png15.patch
+	./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
+	make
+	make install 
+
 
 ## testing 
 
