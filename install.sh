@@ -36,6 +36,8 @@ cd ..
 echo "installing povray 3.6.1 locally"
 tar -jxjf povray-3.6.1.tar.bz2
 cd povray-3.6.1/
+echo "on some machines you need to comment the following line for it to compile..."
+patch -p0 < ../vlpovutils/povray/povray-3.6.1-png15.patch
 export CPPFLAGS=-I$PWD/../libpng15/include
 export LDFLAGS=-L$PWD/../libpng15/lib
 ./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr" 
