@@ -85,6 +85,16 @@ you should get the executables
 if you have trouble compiling povray for some png related function, you may want to use to check that the libpng version is 12 on the system. otherwise you can try to use libpbg15 with the patch from vlpovutils
 
 
+if you get the error  undefined reference to "png_write_finish_row' when compiling povray you can try, once you are in the povray subfolder 
+
+	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
+	export CPPFLAGS=-I$PWD/../libpng15/include
+	export LDFLAGS=-L$PWD/../libpng15/lib
+	./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
+	make
+	make install 
+
+
 ## testing 
 
 run the python script test_vapory.py:

@@ -42,6 +42,14 @@ sed -i 's/restricted /;restricted /g' $PWD/../megapov/etc/povray/3.6/povray.conf
 cd ..
 
 
+#if you get undefined reference to "png_write_finish_row'
+# cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
+# export CPPFLAGS=-I$PWD/../libpng15/include
+# export LDFLAGS=-L$PWD/../libpng15/lib
+#./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
+# make 
+
+
 
 echo "installing patched megapov 1.2.1"
 tar -zxvf megapov-1.2.1.tgz
