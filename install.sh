@@ -31,7 +31,7 @@ make install
 cd ..
 
 
-echo "installing povray 3.6.1 locally, assumin glibpng is the library installed in the system"
+echo "installing povray 3.6.1 locally, assuming libpng12 is the library installed globally in the system"
 tar -jxjf povray-3.6.1.tar.bz2
 cd povray-3.6.1/
 ./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr" 

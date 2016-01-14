@@ -76,12 +76,27 @@ run the installation script  by typing
 
 	sh install.sh
 
+you should get the executables
+	
+	./thirdparties/megapov/bin/povray
+	./thirdparties/megapov/bin/megapov
+	./thirdparties/megapov/bin/vlpov_motionfield2
+
+if you have trouble compiling povray for some png related function, you may want to use to check that the libpng version is 12 on the system. otherwise you can try to use libpbg15 with the patch from vlpovutils
+
 
 if you get the error  undefined reference to "png_write_finish_row' when compiling povray you can try, once you are in the povray subfolder 
 
 	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
 	export CPPFLAGS=-I$PWD/../libpng15/include
 	export LDFLAGS=-L$PWD/../libpng15/lib
+	./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
+	make
+	make install 
+
+if that still does not work you may try to patch povray 
+	
+	patch -p0 < ../vlpovutils/povray/povray-3.6.1-png15.patch
 	./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
 	make
 	make install 
