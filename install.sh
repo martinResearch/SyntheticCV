@@ -28,18 +28,12 @@ cd libpng-1.5.26
 ./configure --prefix=$PWD/../libpng15
 make check
 make install
-echo "small hack to get povray to compile"
-cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
 cd ..
 
 
-echo "installing povray 3.6.1 locally"
+echo "installing povray 3.6.1 locally, assumin glibpng is the library installed in the system"
 tar -jxjf povray-3.6.1.tar.bz2
 cd povray-3.6.1/
-echo "on some machines you need to comment the 3 following lines for it to compile..."
-patch -p0 < ../vlpovutils/povray/povray-3.6.1-png15.patch
-export CPPFLAGS=-I$PWD/../libpng15/include
-export LDFLAGS=-L$PWD/../libpng15/lib
 ./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr" 
 make
 make install 
