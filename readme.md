@@ -83,7 +83,8 @@ you should get the executables
 	./thirdparties/megapov/bin/vlpov_motionfield2
 
 **Warning: if the povray compilation fails you may not notice it until you get missing files while running the python script**. 
-if you get the error  undefined reference to "png_write_finish_row' when compiling povray you can try, once you are in the povray subfolder 
+
+if you get the error * undefined reference to 'png_write_finish_row'* when compiling povray you can try, once you are in the povray subfolder 
 
 	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
 	export CPPFLAGS=-I$PWD/../libpng15/include
@@ -110,7 +111,7 @@ it will create the images shown in the examples above in a the tmp subfolder
 
 #TODO
 
-* check that the ground truth dispary maps  are correct
+* check that the ground truth dispary maps are correct, could be done by wrappng the left image into the right image and the other way around.
 
 * modify vapory or add a layer to use the patched megapov executable (or use the symbolic link trick discussed above) and add the code to read the depth map, disparity maps and occlusion map (read_depth/py) to the vapory code, to make a nice python interface. We need to add a local copy of vapory to the code to do that.
 
@@ -120,9 +121,9 @@ it will create the images shown in the examples above in a the tmp subfolder
 
 * add code to evaluate the quality of stereo reconstruction algorithms that have been executed on the generated synthetic data (maybe usung some code from ipol or middleburry ?)
 
-* add code to evaluate the quality of multiview calibrations and reconstructions 
+* add code to evaluate the quality of multiview calibrations and reconstructions. It would preferably be written in python. Could get inspiration from the code available on the middlebury page [here](http://vision.middlebury.edu/stereo/submit3/) 
 
-* check that the rendering using the patvhed megapov executable is not slower than the original povray 3.7 (it seems slower to me)
+* check that the rendering using the patched megapov executable is not slower than the original povray 3.7 (it seems slower to me)
 
 
 
