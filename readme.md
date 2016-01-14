@@ -67,10 +67,13 @@ This has the advantage of beeing more flexible that using a pached version of po
 
 ## linux (tested on ubuntu)
 
-in a terminal go in the folder than contains the script install.sh and run it by typing
-
-	hg clone ssh://hg@bitbucket.org/martin_delagorce/syntheticcv 
+in a terminal clone the repository and move in the folder than contains the installation script 
+	hg clone https://martin_delagorce@bitbucket.org/martin_delagorce/syntheticcv
 	cd syntheticcv
+
+run the installation script  by typing
+
+
 	sh install.sh
 
 
