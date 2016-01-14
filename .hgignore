@@ -1,0 +1,9 @@
+syntax: glob
+data/*
+thirdparties/*
+povray.conf
+povray.ini
+tmp/*
+megapov
+povray
+vlpov_motionfield2
