@@ -77,6 +77,16 @@ run the installation script  by typing
 	sh install.sh
 
 
+if you get the error  undefined reference to "png_write_finish_row' when compiling povray you can try, once you are in the povray subfolder 
+
+	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
+	export CPPFLAGS=-I$PWD/../libpng15/include
+	export LDFLAGS=-L$PWD/../libpng15/lib
+	./configure --prefix=$PWD/../megapov --with-x COMPILED_BY="martin.de-la-gorce@enpc.fr"  --disable-lib-checks
+	make
+	make install 
+
+
 ## testing 
 
 run the python script test_vapory.py:
