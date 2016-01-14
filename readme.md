@@ -82,7 +82,7 @@ you should get the executables
 	./thirdparties/megapov/bin/megapov
 	./thirdparties/megapov/bin/vlpov_motionfield2
 
-_Warning: if the povray compilation fails you may not notice it until you get missing files while running the python script_. 
+**Warning: if the povray compilation fails you may not notice it until you get missing files while running the python script**. 
 if you get the error  undefined reference to "png_write_finish_row' when compiling povray you can try, once you are in the povray subfolder 
 
 	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
