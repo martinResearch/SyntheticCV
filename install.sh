@@ -36,7 +36,7 @@ cd ..
 echo "installing povray 3.6.1 locally"
 tar -jxjf povray-3.6.1.tar.bz2
 cd povray-3.6.1/
-echo "on some machines you need to comment the following line for it to compile..."
+echo "on some machines you need to comment the 3 following lines for it to compile..."
 patch -p0 < ../vlpovutils/povray/povray-3.6.1-png15.patch
 export CPPFLAGS=-I$PWD/../libpng15/include
 export LDFLAGS=-L$PWD/../libpng15/lib
@@ -46,6 +46,7 @@ make install
 sed -i 's/;none /none /g' $PWD/../megapov/etc/povray/3.6/povray.conf
 sed -i 's/restricted /;restricted /g' $PWD/../megapov/etc/povray/3.6/povray.conf
 cd ..
+
 
 
 echo "installing patched megapov 1.2.1"
