@@ -157,7 +157,7 @@ or more simply
 How easy would it be to add distortion models to the camera ? 
 
 The data set from the sintel animated movies available [2] has been obtained using a modified version of blender. Could we reuse their scripts and code with our randomly generated scenes ? 
-it seem possible to get the binaries of the modified blender to get ground truth flow (no need for disparities), but they cannot provide the script as it would make it too easy for people to re-generate the withheld test set from the publicly available data of Sintel.
+it seem possible to get the binaries of the modified blender to get ground truth flow (no need for disparities) by contacting the authors
 The paper [2] describes the methodology and modications than have been done to blender to generate the data, but it seems that the code has not been made publicly available.
 
 
