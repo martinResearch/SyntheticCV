@@ -84,7 +84,7 @@ you should get the executables
 
 **Warning: if the povray compilation fails you may not notice it until you get missing files while running the python script**. 
 
-if you get the error * undefined reference to 'png_write_finish_row'* when compiling povray you can try, once you are in the povray subfolder 
+if you get the error *undefined reference to png_write_finish_row* when compiling povray you can try, once you are in the povray subfolder 
 
 	cp  $PWD/../libpng15/lib/libpng15.so.15 $PWD/../libpng15/lib/libpng12.so
 	export CPPFLAGS=-I$PWD/../libpng15/include
@@ -124,6 +124,16 @@ it will create the images shown in the examples above in a the tmp subfolder
 * add code to evaluate the quality of multiview calibrations and reconstructions. It would preferably be written in python. Could get inspiration from the code available on the middlebury page [here](http://vision.middlebury.edu/stereo/submit3/) 
 
 * check that the rendering using the patched megapov executable is not slower than the original povray 3.7 (it seems slower to me)
+
+* try to insert mesh from OBJ files in the scene 
+
+* generate edge maps, with classification into normal discontinuity or depth discontinuity
+
+* generate normals maps (could be done from the depth maps, but might be better by patchong povray ?) 
+
+* have several scene generation scripts that are documented and make it modular shuch that anyone can easily create a new scene generator function.
+
+* have a way to genere brick textures without discontinuties at the corners ? 
 
 
 
@@ -171,15 +181,30 @@ The paper [2] describes the methodology and modications than have been done to b
 
  We coud use the code used to generate synthethic optical flow data used in the paper [4]
 
+## references to procedural scenes generation
+
+ [procedural_city_generation](https://josauder.github.io/procedural_city_generation/)
+
+ [Random3Dcity](https://github.com/tudelft3d/Random3Dcity)
+
+ [LSystem](https://pypi.python.org/pypi/LSystem)
+
+ [https://github.com/vvoovv/bcga](procedurals building and houses in python+blender) 
+ 
+[a generative theory of shape] (http://www.rci.rutgers.edu/~mleyton/homepage.htm
+http://www.slideshare.net/martin255/architecture-procdurale)
+
 # Questions
 
 * Why using random scenes instead of sintel scene (http://sintel.is.tue.mpg.de/stereo)? 
 
 	the sintel movie contains many curvy object and might not be suited to train or test methods that work for man made objects with piecwise planar surfaces like urban scenes. The dataset is also limited. Our goal is not to provide a new dataset but opensource tools to create new ones. We can generate un unlimited amount of data. Using our own random scene, we have a better control on the scene properties, we can control the amount of texture, specularities etc. This comes at the cost of having scene that may not have stastics that are similar to natural images.
+Dependning of the algorithm we want to train, we may not need the 3D shapes to be realistic in the sense of objects we can recognize and relative positions of the objects.
 
 * Why not using a blender scripts ?
 
-	that coudl be a good alternative (see section above about blender) using python scripts inside blender, but we may need to  modify blender's C++ source code on order to implement some of the aimed functionalities asdone by [2]
+	that coudl be a good alternative (see section above about blender) using python scripts inside blender, but we may need to  modify blender's C++ source code on order to implement some of the aimed functionalities asdone by [2].
+It is also nice to have a toolbox that can be called from any python script and that does not have to be executed from the python interpreter that is embeded in blender. This somehow give more flexibility for the user.
 
 
 
@@ -214,6 +239,8 @@ If we want to generate interior scenes we could enrich our synthetic scenes usin
 	contemp_living_room_obj.zip
 
 *	http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Sources_of_free_3D_models (website listing most websites that offer 3D models with a short description :)
+
+* photorealistic living room https://www.cgtrader.com/3d-models/architectural-interior/living-room/photorealistic-living-room--2
 
 
 ## references
