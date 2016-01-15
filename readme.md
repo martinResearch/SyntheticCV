@@ -183,9 +183,9 @@ The paper [2] describes the methodology and modications than have been done to b
 
 ## references to procedural scenes generation
 
- [procedural_city_generation](https://josauder.github.io/procedural_city_generation/)
+ [procedural_city_generation](https://josauder.github.io/procedural_city_generation/). Large scale city generation, but the building are quite simple.
 
- [Random3Dcity](https://github.com/tudelft3d/Random3Dcity)
+ [Random3Dcity](https://github.com/tudelft3d/Random3Dcity). Good building structure, but lack of texture.
 
  [LSystem](https://pypi.python.org/pypi/LSystem)
 
