@@ -189,7 +189,7 @@ The paper [2] describes the methodology and modications than have been done to b
 
  [LSystem](https://pypi.python.org/pypi/LSystem)
 
- [https://github.com/vvoovv/bcga](procedurals building and houses in python+blender) 
+ [procedurals building and houses in python+blender](https://github.com/vvoovv/bcga) 
  
 [a generative theory of shape] (http://www.rci.rutgers.edu/~mleyton/homepage.htm
 http://www.slideshare.net/martin255/architecture-procdurale)
