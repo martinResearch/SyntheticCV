@@ -74,7 +74,7 @@ in a terminal clone the repository and move in the folder than contains the inst
 run the installation script  by typing
 
 
-	sh install.sh
+	sh install.sh > installation.log
 
 you should get the executables
 	
@@ -157,10 +157,13 @@ have a look at https://www.blender.org/manual/game_engine/camera/stereo.html and
 http://wiki.blender.org/index.php/User:Dfelinto/Stereoscopy
 in order to get the depth images we could use
 http://www.cs.tut.fi/kurssit/SGN-5406/vrlab2012/blender-manual.pdf or maybe http://www.blensor.org
+or more simply 
+ you can extract the depth (simply render to a Multilayer EXR file, and export the “Z” pass), and the Python interfaces gives you access to the camera data (matrices, sensor sizes, focal length). And from both, you can generate the disparities.
 
 How easy would it be to add distortion models to the camera ? 
 
 The data set from the sintel animated movies available [2] has been obtained using a modified version of blender. Could we reuse their scripts and code with our randomly generated scenes ? 
+it seem possible to get the binaries of the modified blender to get ground truth flow (no need for disparities) by contacting the authors
 The paper [2] describes the methodology and modications than have been done to blender to generate the data, but it seems that the code has not been made publicly available.
 
 
