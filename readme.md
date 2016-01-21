@@ -19,25 +19,25 @@ Generating synthetic data allows us
 synthetic stereo pairs
 
 |  left image | right image  |
-| ----| ---- |
+|----|----|
 |  ![left image](images/image_left.png)  | ![right image](images/image_right.png)  |
 
 
 |  left image | right image  |
-| ----| ---- |
+|----|----|
 |  ![left image](images/image_left2.png)  | ![right image](images/image_right2.png)  |
 
 |  left ground truth depth  | right ground truth depth  |
-| ----| ---- |
+|----|----|
 |  ![left ground truth depth](images/left_depth.png)  | ![right ground truth depth](images/right_depth.png)  |
 
 | left ground truth motion field |  right ground truth motion field  | 
-| ----| ---- |
+|----|----|
 |  ![right ground truth motion field](images/motionfield_mx_left.png)  | ![right ground truth motion field](images/motionfield_mx_right.png) |
 
 
 |  left occlusions  | right occlusions  |
-| ----| ---- |
+|----|----|
 | ![right occlusions](images/occlusion_left.png) | ![right occlusions](images/occlusion_right.png)  |
 
 
@@ -256,5 +256,3 @@ Christian Unger, Slobodan Ilic. Pattern Recognition 2013 [project page](http://c
 [github page](https://github.com/haltakov/synthetic-dataset)
 
 [4] *Learning a Confidence Measure for Optical Flow* Mac Aodha, O., Humayun, A., Pollefeys, M., Brostow, G.J. PAMI 2012 [paper](https://www.inf.ethz.ch/personal/pomarc/pubs/MacAodhaPAMI12.pdf) [code](http://visual.cs.ucl.ac.uk/pubs/flowConfidence/GetFlowv1.2.zip)
-
-
