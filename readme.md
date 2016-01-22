@@ -201,7 +201,7 @@ http://www.slideshare.net/martin255/architecture-procdurale)
 	the sintel movie contains many curvy object and might not be suited to train or test methods that work for man made objects with piecewise planar surfaces like urban scenes. The dataset is also limited. Our goal is not to provide a new dataset but opensource tools to create new ones. We can generate un unlimited amount of data. Using our own random scene, we have a better control on the scene properties, we can control the amount of texture, specularities etc. This comes at the cost of having scene that may not have statics that are similar to natural images.
 Depending of the algorithm we want to train, we may not need the 3D shapes to be realistic in the sense of objects we can recognize and relative positions of the objects.
 
-* Why not using a blender scripts ?
+* Why not using a blender script ?
 
 	that could be a good alternative (see section above about blender) using python scripts inside blender, but we may need to  modify blender's C++ source code on order to implement some of the aimed functionalities as done by [2].
 It is also nice to have a toolbox that can be called from any python script and that does not have to be executed from within the python interpreter that is embedded in blender. This somehow give more flexibility for the user. However we could call blender in the command line and write small python function to do a wrapper, and it might event be possible to use blender as a python module [see here](http://wiki.blender.org/index.php/User:Ideasman42/BlenderAsPyModule)
