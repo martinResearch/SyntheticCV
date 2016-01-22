@@ -181,6 +181,8 @@ debuging python code in blender is not easy. One solution would be to use blende
  or use WingIDE that comes with a solution to test and debug blender code
 [see here](https://wingware.com/doc/howtos/blender)
 
+A similar project using blender titled *3D Ground Truth Data Generation with Blender Framework* as been done at TUM by Kevin Sawischa under the supervision of Philipp Heise, Brian Jensen, and Alois Knoll [project description](http://www6.in.tum.de/pub/Main/StudentProjects/blender.pdf)
+
 ## using maya 
 
  We coud use the code used to generate synthetic optical flow data used in the paper [4]
