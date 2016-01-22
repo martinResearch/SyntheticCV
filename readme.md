@@ -260,3 +260,5 @@ Christian Unger, Slobodan Ilic. Pattern Recognition 2013 [project page](http://c
 [github page](https://github.com/haltakov/synthetic-dataset)
 
 [4] *Learning a Confidence Measure for Optical Flow* Mac Aodha, O., Humayun, A., Pollefeys, M., Brostow, G.J. PAMI 2012 [paper](https://www.inf.ethz.ch/personal/pomarc/pubs/MacAodhaPAMI12.pdf) [code](http://visual.cs.ucl.ac.uk/pubs/flowConfidence/GetFlowv1.2.zip)
+
+[5] *CADaVISION: A Simulation Framework for Machine Vision Prototyping* Stephan Irgenfried, Igor Tchouchenkov, Heinz Wörn, Radek Koci, Petr Hanacek, Jiri Kunovski, Frantisek Zboril, Jan Samek, Petr Peringer Proceedings of the 2nd International Conference on Computer Modelling and Simulation CSSim 2011 [paper](http://wwwipr.ira.uka.de/get.php?id=734)
