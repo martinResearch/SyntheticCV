@@ -1,17 +1,17 @@
 # Project's goals
 
-The goal of this project is to provide an easy-to-install python toolbox that can be used to easily generate synthetic training and testing data for various computer-vision problems such as stereo reconstruction, optical flow, multiview reconstruction, structure from motion, point and segment matching, single view surface normals estimation or shape from shading. For now only rigid scene are handled.
+The goal of this project is to provide an easy-to-install python toolbox that can be used to easily generate synthetic training and testing data for various computer-vision problems such as stereo reconstruction, optical flow, multi-view reconstruction, structure from motion, point and segment matching, single view surface normals estimation or shape from shading. For now only rigid scene are handled.
 
 The synthetic images are obtained through the generation of a random 3D scene that is rendered using the open-source ray-tracer called povray trough a simple python interface to povray called [vapory](https://github.com/Zulko/vapory).
-The povray ray tracer is patched using [vlpovutils](https://github.com/devernay/vlpovutils) in order to allow the obtention of the disparity map in case of stereo pairs generation. 
+The povray ray tracer is patched using [vlpovutils](https://github.com/devernay/vlpovutils) in order to allow to obtain the disparity map in case of stereo pairs generation. 
 
 Generating synthetic data allows us 
 
-* to have a complete control on the type a scenes we want to specialize our algorithm on, For example we can generate scenes that are piecewise planar and that are manahattan or not. We have a control on the surface properties (lambertian  or with specularities) and we can control the amount and type of textures. 
+* to have a complete control on the type a scenes we want to specialize our algorithm on, For example we can generate scenes that are piecewise planar and that are Manhattan or not. We have a control on the surface properties (lambertian  or with specularities) and we can control the amount and type of textures. 
 
-* to generate data in large quantities (assuming you have enough computational ressources) 
+* to generate data in large quantities (assuming you have enough computational resources) 
 
-* to have perfect ground truth with no measure error, that can be usefull to check that there are no bugs in your stereo or optical flow code. 
+* to have perfect ground truth with no measure error, that can be useful to check that there are no bugs in your stereo or optical flow code. 
 
  
 ## Examples
@@ -52,11 +52,11 @@ left disparity obtain from the pair of image and Semi global Patch matching from
 
 The scenes are generated in the pov-ray format using a constructive solid geometry (CSG) description of the surface i.e. using unions and differences of basic 3D shapes such as sphere cubes etc and thus there is no triangulated surface description of the scene. This can be a problem if one wants to use the triangulated surface to generate disparity maps or displacement fields.
 This could be overcome by allowing the user the generate random scene that are triangulated surfaces, either by generating directly triangulated surfaces or by converting the CSG into a triangulated surface before rendering and by giving access to the triangulated surface to the user. 
-However  i could not find tool to generate meshes from povrayfile (which would require some solid-geometry-to-mesh tool such as  openSCAD or [solidPython](https://github.com/SolidCode/SolidPython)). 
+However I could not find tool to generate meshes from povray files (which would require some solid-geometry-to-mesh tool such as  openSCAD or [solidPython](https://github.com/SolidCode/SolidPython)). 
 
 
 An approach would consist in using only meshed and no solid geometry , and then use CGAL to generate the depth map using raytracing in CGAL, or use some other renderer that gives access to the zbuffer.
-This has the advantage of beeing more flexible that using a pached version of povray and would allow to get disparities in  hidden parts too. 
+This has the advantage of being more flexible that using a patched version of povray and would allow to get disparities in  hidden parts too. 
 
 
 
@@ -107,21 +107,21 @@ run the python script test_vapory.py:
 
 	python test_vapory.py
 
-it will create the images shown in the examples above in a the tmp subfolder
+it will create the images shown in the examples above in a the tmp sub-folder
 
 #TODO
 
-* check that the ground truth dispary maps are correct, could be done by wrappng the left image into the right image and the other way around.
+* check that the ground truth disparity maps are correct, could be done by wrapping the left image into the right image and the other way around.
 
 * modify vapory or add a layer to use the patched megapov executable (or use the symbolic link trick discussed above) and add the code to read the depth map, disparity maps and occlusion map (read_depth/py) to the vapory code, to make a nice python interface. We need to add a local copy of vapory to the code to do that.
 
-* give a better control of the camera paramters using te classical conventions used in computer vision, uncluding the focal, position of the central point etc. Maybe allows to add distortions in the camera? there are already some non conventional camera models in povray [see here](http://www.povray.org/documentation/view/3.6.1/247/)
+* give a better control of the camera parameters using te classical conventions used in computer vision, including the focal, position of the central point etc. Maybe allows to add distortions in the camera? there are already some non conventional camera models in povray [see here](http://www.povray.org/documentation/view/3.6.1/247/)
 
 * obtain motion field for non rigid scene. It might be quite difficult to do.
 
-* add code to evaluate the quality of stereo reconstruction algorithms that have been executed on the generated synthetic data (maybe usung some code from ipol or middleburry ?)
+* add code to evaluate the quality of stereo reconstruction algorithms that have been executed on the generated synthetic data (maybe using some code from ipol or middleburry ?)
 
-* add code to evaluate the quality of multiview calibrations and reconstructions. It would preferably be written in python. Could get inspiration from the code available on the middlebury page [here](http://vision.middlebury.edu/stereo/submit3/) 
+* add code to evaluate the quality of multi-view calibrations and reconstructions. It would preferably be written in python. Could get inspiration from the code available on the middlebury page [here](http://vision.middlebury.edu/stereo/submit3/) 
 
 * check that the rendering using the patched megapov executable is not slower than the original povray 3.7 (it seems slower to me)
 
@@ -129,11 +129,11 @@ it will create the images shown in the examples above in a the tmp subfolder
 
 * generate edge maps, with classification into normal discontinuity or depth discontinuity
 
-* generate normals maps (could be done from the depth maps, but might be better by patchong povray ?) 
+* generate normals maps (could be done from the depth maps, but might be better by patching povray ?) 
 
-* have several scene generation scripts that are documented and make it modular shuch that anyone can easily create a new scene generator function.
+* have several scene generation scripts that are documented and make it modular such that anyone can easily create a new scene generator function.
 
-* have a way to genere brick textures without discontinuties at the corners ? 
+* have a way to generate brick textures without discontinuities at the corners ? 
 
 
 
@@ -149,9 +149,9 @@ There are synthetic office and living room images + depth [here](http://www.doc.
 the paper describing the image generation process can be found [here](http://www.doc.ic.ac.uk/~ahanda/VaFRIC/icra2014.pdf)
 it has been generated wit POVray http://www.povray.org/
 
-improved version of thes synthetic data with additional what can be found [here](http://redwood-data.org/indoor/dataset.html)
+improved version of the synthetic data with additional what can be found [here](http://redwood-data.org/indoor/dataset.html)
 
-explaination on how to create a camera paramterized as usually done in computer vision in povray in [1], but there is not code available online.
+explanation on how to create a camera parametrized as usually done in computer vision in povray in [1], but there is not code available online.
 
 there a a similar project to generate synthetic scenes seen from a car [3] 
 
@@ -174,12 +174,12 @@ How easy would it be to add distortion models to the camera ?
 
 The data set from the sintel animated movies available [2] has been obtained using a modified version of blender. Could we reuse their scripts and code with our randomly generated scenes ? 
 it seem possible to get the binaries of the modified blender to get ground truth flow (no need for disparities) by contacting the authors
-The paper [2] describes the methodology and modications than have been done to blender to generate the data, but it seems that the code has not been made publicly available.
+The paper [2] describes the methodology and modifications than have been done to blender to generate the data, but it seems that the code has not been made publicly available.
 
 
 ## using maya 
 
- We coud use the code used to generate synthethic optical flow data used in the paper [4]
+ We coud use the code used to generate synthetic optical flow data used in the paper [4]
 
 ## references to procedural scenes generation
 
@@ -198,15 +198,13 @@ http://www.slideshare.net/martin255/architecture-procdurale)
 
 * Why using random scenes instead of sintel scene (http://sintel.is.tue.mpg.de/stereo)? 
 
-	the sintel movie contains many curvy object and might not be suited to train or test methods that work for man made objects with piecwise planar surfaces like urban scenes. The dataset is also limited. Our goal is not to provide a new dataset but opensource tools to create new ones. We can generate un unlimited amount of data. Using our own random scene, we have a better control on the scene properties, we can control the amount of texture, specularities etc. This comes at the cost of having scene that may not have stastics that are similar to natural images.
-Dependning of the algorithm we want to train, we may not need the 3D shapes to be realistic in the sense of objects we can recognize and relative positions of the objects.
+	the sintel movie contains many curvy object and might not be suited to train or test methods that work for man made objects with piecewise planar surfaces like urban scenes. The dataset is also limited. Our goal is not to provide a new dataset but opensource tools to create new ones. We can generate un unlimited amount of data. Using our own random scene, we have a better control on the scene properties, we can control the amount of texture, specularities etc. This comes at the cost of having scene that may not have statics that are similar to natural images.
+Depending of the algorithm we want to train, we may not need the 3D shapes to be realistic in the sense of objects we can recognize and relative positions of the objects.
 
 * Why not using a blender scripts ?
 
-	that coudl be a good alternative (see section above about blender) using python scripts inside blender, but we may need to  modify blender's C++ source code on order to implement some of the aimed functionalities asdone by [2].
-It is also nice to have a toolbox that can be called from any python script and that does not have to be executed from the python interpreter that is embeded in blender. This somehow give more flexibility for the user.
-
-
+	that could be a good alternative (see section above about blender) using python scripts inside blender, but we may need to  modify blender's C++ source code on order to implement some of the aimed functionalities as done by [2].
+It is also nice to have a toolbox that can be called from any python script and that does not have to be executed from within the python interpreter that is embedded in blender. This somehow give more flexibility for the user. However we could call blender in the command line and write small python function to do a wrapper, and it might event be possible to use blender as a python module [see here](http://wiki.blender.org/index.php/User:Ideasman42/BlenderAsPyModule)
 
 
 ## some models available online
@@ -234,7 +232,7 @@ If we want to generate interior scenes we could enrich our synthetic scenes usin
 * http://resources.blogscopia.com
  	license : Creative Commons 3.0 Unported ( http://resources.blogscopia.com/license-2/)	
 	furnitures but not complete scenes
-	exemple
+	example
 	contemp_living_room_sh3d.zip
 	contemp_living_room_obj.zip
 
