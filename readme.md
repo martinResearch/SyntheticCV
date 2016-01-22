@@ -176,6 +176,10 @@ The data set from the sintel animated movies available [2] has been obtained usi
 it seem possible to get the binaries of the modified blender to get ground truth flow (no need for disparities) by contacting the authors
 The paper [2] describes the methodology and modifications than have been done to blender to generate the data, but it seems that the code has not been made publicly available.
 
+**Notes:**
+debuging python code in blender is not easy. One solution would be to use blender as a python module [see here](http://wiki.blender.org/index.php/User:Ideasman42/BlenderAsPyModule)
+ or use WingIDE that comes with a solution to test and debug blender code
+[see here](https://wingware.com/doc/howtos/blender)
 
 ## using maya 
 
