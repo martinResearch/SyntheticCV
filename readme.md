@@ -116,7 +116,7 @@ it will create the images shown in the examples above in a the tmp sub-folder
 
 * give a better control of the camera parameters using te classical conventions used in computer vision, including the focal, position of the central point etc. Maybe allows to add distortions in the camera? there are already some non conventional camera models in povray [see here](http://www.povray.org/documentation/view/3.6.1/247/)
 
-* obtain motion field for non rigid scene. It might be quite difficult to do.
+* obtain motion field for non rigid scene. It might be quite difficult to do.In [1] the scene is composed of rigid object, and from the 3D point, its label (object number), and the translation and rotation change between the two frame the 2D displacement can be computed.
 
 * add code to evaluate the quality of stereo reconstruction algorithms that have been executed on the generated synthetic data (maybe using some code from ipol or middleburry ?)
 
