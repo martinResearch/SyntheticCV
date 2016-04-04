@@ -50,16 +50,15 @@ left disparity obtain from the pair of image and Semi global Patch matching from
 
 # Limitations
 
-The scenes are generated in the pov-ray format using a constructive solid geometry (CSG) description of the surface i.e. using unions and differences of basic 3D shapes such as sphere cubes etc and thus there is no triangulated surface description of the scene. This can be a problem if one wants to use the triangulated surface to generate disparity maps or displacement fields.
-This could be overcome by allowing the user the generate random scene that are triangulated surfaces, either by generating directly triangulated surfaces or by converting the CSG into a triangulated surface before rendering and by giving access to the triangulated surface to the user. 
+For now the scenes we generate in the pov-ray format are based on constructive solid geometry (CSG) description of the surface i.e. using unions and differences of basic 3D shapes such as sphere cubes etc and thus there is no triangulated surface description of the scene that is generated. This can be a problem if one wants to use the triangulated surface corresponding to the scene to generate disparity maps or displacement fields using external code.
+This could be overcome by  generating random scene that are triangulated surfaces instead of CS or by converting the CSG into a triangulated surface before rendering and by giving access to the triangulated surface to the user. 
 However I could not find tool to generate meshes from povray files (which would require some solid-geometry-to-mesh tool such as  openSCAD or [solidPython](https://github.com/SolidCode/SolidPython)). 
 
 
-An approach would consist in using only meshed and no solid geometry , and then use CGAL to generate the depth map using raytracing in CGAL, or use some other renderer that gives access to the zbuffer.
+An alternative approach to obtain the depth map would consist in using only triangulted surfaces and no CSG when generating the random scene, and then use CGAL to generate the depth map using ray-tracing in CGAL, or use some other renderer that gives access to the zbuffer.
 This has the advantage of being more flexible that using a patched version of povray and would allow to get disparities in  hidden parts too. 
 
-
-
+An other alternative is to obtain the depth using the fog simulation in povray: the further an object is, the stronger the fog effect is. One only nead to post process the image by applying a non linear function on each pixel intensities to obtain the depth map. this is the method proposed in [1].
 
 
 # Install
