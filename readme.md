@@ -185,6 +185,13 @@ A similar project using blender titled *3D Ground Truth Data Generation with Ble
 ## using maya 
 
  We coud use the code used to generate synthetic optical flow data used in the paper [4]
+ 
+ ## other ray tracers with oytohn interface
+ 
+ https://github.com/glotzerlab/fresnel
+ 
+ https://github.com/mitsuba-renderer/mitsuba2
+ 
 
 ## references to procedural scenes generation
 
